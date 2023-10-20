@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from p13 import Solution
+from .solution import Solution
 
 
 class Test13(TestCase):
