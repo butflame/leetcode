@@ -3,8 +3,8 @@ from unittest import TestCase
 from .solution import Solution
 
 
-class Test13(TestCase):
-    def test_roman_to_int(self):
+class Test(TestCase):
+    def test_it(self):
         cases = [
             {
                 "args": ["III"],
@@ -32,7 +32,7 @@ class Test13(TestCase):
                 "expect": 1994
             },
         ]
-        for index, case in enumerate(cases):
+        for index, case in enumerate(cases, start=1):
             result = Solution().romanToInt(*case["args"], **case["kwargs"])
             expect = case["expect"]
             self.assertEqual(result, expect, f"case {index} failed")
