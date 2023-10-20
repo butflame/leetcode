@@ -1,18 +1,22 @@
-# https://leetcode.cn/problems/remove-element/description/
-from typing import List
-
+# https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
 
 class Solution:
-    def removeElement(self, nums: List[int], val: int) -> int:
-        if not nums:
-            return 0
+    def strStr(self, haystack: str, needle: str) -> int:
+        ret = -1
+        if len(haystack) < len(needle):
+            return ret
 
-        valid_index, invalid_index = 0, len(nums) - 1
-        while valid_index <= invalid_index:
-            if nums[valid_index] != val:
-                valid_index += 1
+        i = 0
+        while i < len(haystack):
+            j = 0
+            while j < len(needle):
+                if i + j >= len(haystack):
+                    break
+                if haystack[i + j] != needle[j]:
+                    break
+                j += 1
             else:
-                nums[valid_index], nums[invalid_index] = nums[invalid_index], nums[valid_index]
-                invalid_index -= 1
+                return i
+            i += 1
 
-        return valid_index
+        return ret
