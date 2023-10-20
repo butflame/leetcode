@@ -6,16 +6,16 @@ from .solution import Solution
 class Test(TestCase):
     def test_it(self):
         cases = [
-            # {
-            #     "args": [1000, 35, 700, 300],
-            #     "kwargs": {},
-            #     "expect": "Heavy"
-            # },
-            # {
-            #     "args": [200, 50, 800, 50],
-            #     "kwargs": {},
-            #     "expect": "Neither"
-            # },
+            {
+                "args": [1000, 35, 700, 300],
+                "kwargs": {},
+                "expect": "Heavy"
+            },
+            {
+                "args": [200, 50, 800, 50],
+                "kwargs": {},
+                "expect": "Neither"
+            },
             {
                 "args": [3223, 1271, 2418, 749],
                 "kwargs": {},
