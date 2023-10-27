@@ -11,12 +11,14 @@ class TreeNode:
     def __repr__(self):
         return f"<{self.__class__.__name__}> val: {self.val}, left: {self.left}, right: {self.right}"
 
-    def __eq__(self, other):
-        if not other or not isinstance(other, self.__class__):
-            return False
-
-        return self.val == other.val and self.left == other.left and self.right == other.right
-
 
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        return self.check(root, root)
+
+    def check(self, a: Optional[TreeNode], b: Optional[TreeNode]):
+        if not a and not b:
+            return True
+        elif not a or not b:
+            return False
+        return a.val == b.val and self.check(a.left, b.right) and self.check(a.right, b.left)
