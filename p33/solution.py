@@ -99,6 +99,11 @@ class TestSolution(TestCase):
                 "input": [[1]],
                 "expect": 0
             },
+            {
+                "input": [[2, 1]],
+                "expect": 1
+            },
+
         ]
         for idx, c in enumerate(cases, start=1):
             expect_ = c["expect"]
